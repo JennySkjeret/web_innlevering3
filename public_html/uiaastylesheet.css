@@ -91,8 +91,10 @@ body{
 
 
 #menubar nav{
-float: left;
+float: right;
+margin-top: -10%;
 }
+
 
 #menubar ul {
     background-color: #000000;
@@ -150,16 +152,15 @@ header{
 }
 
 #home section{
-/* margin: 1.5% 1.5%; */
 color: #000000;
 height: 300%;
 width: 100%;
 }
 
 #logo {
-width: 8%;
-margin-left:2%;
-margin-top: 1%;
+width: 7%;
+margin-left:5%;
+margin-top: 0;
 }
 
 .biggerleft figure figcaption {
