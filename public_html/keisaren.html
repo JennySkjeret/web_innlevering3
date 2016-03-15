@@ -5,6 +5,51 @@
     <meta charset="utf-8">
     <title>groupptwo</title>
      <link rel="stylesheet" href="uiaastylesheet.css">
+     
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width" content="initial-scale=1"/>
+    
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+
+<script>
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(62.471330,6.158562),
+    zoom:15,
+    
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap2"),mapProp);
+  
+  var markerKeisaren;
+  var contentStringKeisern = '<div id="content">'+'<a href="keisaren.html">Keisern Bar</a>'+'</div>';
+  
+       //Keisern
+  
+var infowindowKeisern = new google.maps.InfoWindow({
+    content: contentStringKeisern
+  });
+  
+  markerKeisern = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.471330, lng: 6.158562}
+  });
+  
+  markerKeisern.addListener('click', function(){
+    infowindowKeisern.open(map, markerKeisern);
+  });
+  
+  
+  
+       }
+google.maps.event.addDomListener(window, 'load', initialize);
+  
+  
+  </script>
+  
+     
   </head>
 
  
@@ -90,6 +135,11 @@
 </p>
 </article>
 </div>
+
+    <div class="mapWrap">
+      <div id="googleMap2"></div>
+    </div>
+
     </section>
 
 

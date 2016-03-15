@@ -5,6 +5,50 @@
     <meta charset="utf-8">
     <title>groupptwo</title>
      <link rel="stylesheet" href="uiaastylesheet.css">
+     
+     
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width" content="initial-scale=1"/>
+    
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+
+<script>
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(62.47123,6.15288),
+    zoom:15,
+    
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap2"),mapProp);
+  
+  var markerBocca;
+  var contentStringBocca = '<div id="content">'+'<a href="bocca.html">Bocca</a>'+'</div>';
+  
+  //Bocca
+  
+var infowindowBocca = new google.maps.InfoWindow({
+    content: contentStringBocca
+  });
+  
+  markerBocca = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.47123, lng: 6.15288}
+  });
+  
+  markerBocca.addListener('click', function(){
+    infowindowBocca.open(map, markerBocca);
+  });
+  
+  
+      }
+google.maps.event.addDomListener(window, 'load', initialize);
+  
+  
+  </script>
+     
   </head>
 
  
@@ -90,6 +134,11 @@
 </p>
 </article>
 </div>
+
+    <div class="mapWrap">
+      <div id="googleMap2"></div>
+    </div>
+
     </section>
 
 

@@ -5,6 +5,51 @@
     <meta charset="utf-8">
     <title>groupptwo</title>
      <link rel="stylesheet" href="uiaastylesheet.css">
+     
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width" content="initial-scale=1"/>
+    
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+
+<script>
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(62.473601,6.156492),
+    zoom:15,
+    
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap2"),mapProp);
+  
+  var markerHoffmann;
+  var contentStringHoffmann = '<div id="content">'+'<a href="hoffmann.html">Hoffmann</a>'+'</div>';  
+  
+       //Hoffmann
+  
+var infowindowHoffmann = new google.maps.InfoWindow({
+    content: contentStringHoffmann
+  });
+  
+  markerHoffmann = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.473601, lng: 6.156492}
+  });
+  
+  markerHoffmann.addListener('click', function(){
+    infowindowHoffmann.open(map, markerHoffmann);
+  });  
+  
+  
+  
+          }
+google.maps.event.addDomListener(window, 'load', initialize);
+  
+  
+  </script>
+     
+     
   </head>
 
  
@@ -93,6 +138,11 @@
 </p>
 </article>
 </div>
+
+    <div class="mapWrap">
+      <div id="googleMap2"></div>
+    </div>
+
     </section>
 
 

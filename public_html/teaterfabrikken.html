@@ -5,6 +5,52 @@
     <meta charset="utf-8">
     <title>groupptwo</title>
      <link rel="stylesheet" href="uiaastylesheet.css">
+     
+     
+     
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width" content="initial-scale=1"/>
+    
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+
+<script>
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(62.473294,6.145757),
+    zoom:15,
+    
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap2"),mapProp);
+  
+  var markerTeaterfabrikken;
+  var contentStringTeaterfabrikken = '<div id="content">'+'<a href="teaterfabrikken.html">Teaterfabrikken</a>'+'</div>';
+        
+       //Teaterfabrikken
+  
+var infowindowTeaterfabrikken = new google.maps.InfoWindow({
+    content: contentStringTeaterfabrikken
+  });
+  
+  markerTeaterfabrikken = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.473294, lng: 6.145757}
+  });
+  
+  markerTeaterfabrikken.addListener('click', function(){
+    infowindowTeaterfabrikken.open(map, markerTeaterfabrikken);
+  });
+  
+  
+    }
+google.maps.event.addDomListener(window, 'load', initialize);
+  
+  
+  </script>  
+        
+     
   </head>
 
  
@@ -88,6 +134,11 @@ Teaterfabrikken tilbyr underholdning utenom det vanlige. Arrangementene varierer
 </p>
 </article>
 </div>
+
+    <div class="mapWrap">
+      <div id="googleMap2"></div>
+    </div>
+
     </section>
 
 
