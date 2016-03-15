@@ -5,6 +5,53 @@
     <meta charset="utf-8">
     <title>groupptwo</title>
      <link rel="stylesheet" href="uiaastylesheet.css">
+     
+     
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width" content="initial-scale=1"/>
+    
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+
+<script>
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(62.471941,6.165821),
+    zoom:15,
+    
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap2"),mapProp);
+  
+  var markerSteinovnen;
+  var contentStringSteinovnen = '<div id="content">'+'<a href="steinovnen.html">Steinovnen</a>'+'</div>';
+  
+       //Steinovnen
+  
+var infowindowSteinovnen = new google.maps.InfoWindow({
+    content: contentStringSteinovnen
+  });
+  
+  markerSteinovnen = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.471941, lng: 6.165821}
+  });
+  
+  markerSteinovnen.addListener('click', function(){
+    infowindowSteinovnen.open(map, markerSteinovnen);
+  });
+     
+     
+     
+     
+         }
+google.maps.event.addDomListener(window, 'load', initialize);
+  
+  
+  </script>
+        
+     
   </head>
 
  
@@ -91,6 +138,11 @@ Steinovnen ligger sentralt på Ustillingsplassen  i Ålesund sentrum og spesiali
 </p>
 </article>
 </div>
+
+    <div class="mapWrap">
+      <div id="googleMap2"></div>
+    </div>
+
     </section>
 
 

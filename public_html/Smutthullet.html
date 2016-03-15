@@ -5,6 +5,51 @@
     <meta charset="utf-8">
     <title>groupptwo</title>
      <link rel="stylesheet" href="uiaastylesheet.css">
+     
+     
+     
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width" content="initial-scale=1"/>
+    
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+
+<script>
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(62.474231,6.158089),
+    zoom:15,
+    
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap2"),mapProp);
+     
+     
+  var markerSmutthullet;
+  var contentStringSmutthullet = '<div id="content">'+'<a href="#.html">Smutthullet Pub</a>'+'</div>';
+  
+       //Smutthullet
+  
+var infowindowSmutthullet = new google.maps.InfoWindow({
+    content: contentStringSmutthullet
+  });
+  
+  markerSmutthullet = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.474231, lng: 6.158089}
+  });
+  
+  markerSmutthullet.addListener('click', function(){
+    infowindowSmutthullet.open(map, markerSmutthullet);
+  });
+  
+  }
+google.maps.event.addDomListener(window, 'load', initialize);
+  
+  
+  </script>      
+        
   </head>
 
  
@@ -88,6 +133,11 @@
 </p>
 </article>
 </div>
+
+    <div class="mapWrap">
+      <div id="googleMap2"></div>
+    </div>
+
     </section>
 
 

@@ -39,6 +39,7 @@ function initialize() {
   var markerTeaterfabrikken;
   var markerToldboden;
   var markerBacchus;
+  var markerTerminalen;
   
   var contentStringBanken = '<div id="content">'+'<a href="banken.html">Banken</a>'+'</br>'+'<a href="banken.html"><img src="stylesheets/banken.png" alt="Banken"></a>'+'</div>';
   var contentStringAnno = '<div id="content">'+'<a href="anno.html">Anno Bar</a>'+'</br>'+'<a href="anno.html"><img src="stylesheets/anno3.png" alt="Anno"></a>'+'</div>';
@@ -58,7 +59,7 @@ function initialize() {
   var contentStringTeaterfabrikken = '<div id="content">'+'<a href="teaterfabrikken.html">Teaterfabrikken</a>'+'</br>'+'<a href="teaterfabrikken.html"><img src="stylesheets/teaterfabrikken.png" alt="Teaterfabrikken"></a>'+'</div>';
   var contentStringToldboden = '<div id="content">'+'<a href="toldboden.html">Toldboden</a>'+'</br>'+'<a href="toldboden.html"><img src="stylesheets/toldboden.png" alt="Toldboden"></a>'+'</div>';
   var contentStringBacchus = '<div id="content">'+'<a href="bacchus.html">Bacchus</a>'+'</br>'+'<a href="bacchus.html"><img src="stylesheets/bacchus.png" alt="Bacchus"></a>'+'</div>';
-  
+  var contentStringTerminalen = '<div id="content">'+'<a href="terminalen.html">Terminalen</a>'+'</br>'+'<a href="terminalen.html"><img src="stylesheets/terminalen.png" alt="Terminalen"></a>'+'</div>';
   
   //Banken
   
@@ -76,6 +77,28 @@ function initialize() {
   markerBanken.addListener('click', function(){
     infowindowBanken.open(map, markerBanken);
   });
+  
+  
+  
+   //Terminalen
+  
+  var infowindowTerminalen = new google.maps.InfoWindow({
+    content: contentStringTerminalen
+  });
+  
+  markerTerminalen = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.470234, lng: 6.152963}
+  });
+  
+  markerTerminalen.addListener('click', function(){
+    infowindowTerminalen.open(map, markerTerminalen);
+  });
+  
+  
+  
   
   //Anno
   

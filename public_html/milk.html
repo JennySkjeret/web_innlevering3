@@ -5,6 +5,51 @@
     <meta charset="utf-8">
     <title>groupptwo</title>
      <link rel="stylesheet" href="uiaastylesheet.css">
+     
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width" content="initial-scale=1"/>
+    
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+
+<script>
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(62.474181,6.155560),
+    zoom:15,
+    
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap2"),mapProp);
+  
+  var markerMilk;
+  var contentStringMilk = '<div id="content">'+'<a href="milk.html">Milk bar & lounge</a>'+'</div>';
+  
+       //Milk
+  
+var infowindowMilk = new google.maps.InfoWindow({
+    content: contentStringMilk
+  });
+  
+  markerMilk = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.474181, lng: 6.155560}
+  });
+  
+  markerMilk.addListener('click', function(){
+    infowindowMilk.open(map, markerMilk);
+  });
+  
+  
+  
+         }
+google.maps.event.addDomListener(window, 'load', initialize);
+  
+  
+  </script>
+     
+     
   </head>
 
  
@@ -88,6 +133,11 @@ Milk bar & lounge ligger tett tilknyttet spisestedene XL-diner, Kabb og Big Horn
 </p>
 </article>
 </div>
+
+    <div class="mapWrap">
+      <div id="googleMap2"></div>
+    </div>
+
     </section>
 
 
