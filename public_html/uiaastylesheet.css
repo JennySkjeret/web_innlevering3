@@ -328,11 +328,18 @@ margin-top: 1.5%;
 margin-bottom: 1.5%;
 }
 
-
-table caption {
-  font-size: 30px;
+#beerprice h1{
+font-size: 30px;
   margin-bottom: 1.5%;
- 
+  text-align: center;
+}
+#beerprice figure{
+ width:100%;
+ max-width: 100%;
+}
+
+#beerprice img{
+    width:100%;
 }
 
 colgroup col {
