@@ -5,6 +5,412 @@
     <meta charset="utf-8">
     <title>groupptwo</title>
      <link rel="stylesheet" href="uiaastylesheet.css">
+     
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width" content="initial-scale=1"/>
+    
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    
+    <script>
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(62.471370,6.189843),
+    zoom:13,
+    
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+  
+  var markerBanken;
+  var markerAnno;
+  var markerBocca;
+  var markerDirtyNelly
+  var markerHoffmann;
+  var markerJugend;
+  var markerKabb;
+  var markerKeisern;
+  var markerMilk;
+  var markerMolla;
+  var markerPiano;
+  var markerPianisten;
+  var markerPosthjornet;
+  var markerSmutthullet;
+  var markerSteinovnen;
+  var markerTeaterfabrikken;
+  var markerToldboden;
+  var markerBacchus;
+  
+  var contentStringBanken = '<div id="content">'+'<a href="produkter.html">Banken</a>'+'</br>'+'<a href="om_oss.html"><img src="stylesheets/banken.png" alt="Banken"></a>'+'</div>';
+  var contentStringAnno = '<div id="content">'+'<a href="om_oss.html">Anno Bar</a>'+'</br>'+'<a href="om_oss.html"><img src="stylesheets/anno3.png" alt="Anno"></a>'+'</div>';
+  var contentStringBocca = '<div id="content">'+'<a href="om_oss.html">Bocca</a>'+'</br>'+'<a href="om_oss.html"><img src="stylesheets/bocca.png" alt="Bocca"></a>'+'</div>';
+  var contentStringDirtyNelly = '<div id="content">'+'<a href="produkter.html">Dirty Nelly</a>'+'</br>'+'<a href="om_oss.html"><img src="stylesheets/dirtyNelly.png" alt="Dirty Nelly"></a>'+'</div>';
+  var contentStringHoffmann = '<div id="content">'+'<a href="produkter.html">Hoffmann</a>'+'</br>'+'<a href="om_oss.html"><img src="stylesheets/hoffmann.png" alt="Hoffmann"></a>'+'</div>';  
+  var contentStringJugend = '<div id="content">'+'<a href="produkter.html">Jugend Bar</a>'+'</br>'+'<a href="om_oss.html"><img src="stylesheets/jugend.png" alt="Jugend Bar"></a>'+'</div>';
+  var contentStringKabb = '<div id="content">'+'<a href="produkter.html">Kabb</a>'+'</br>'+'<a href="om_oss.html"><img src="stylesheets/kabb.png" alt="Kabb"></a>'+'</div>';
+  var contentStringKeisern = '<div id="content">'+'<a href="produkter.html">Keisern Bar</a>'+'</br>'+'<a href="om_oss.html"><img src="stylesheets/keisern.png" alt="Keisern Bar"></a>'+'</div>';
+  var contentStringMilk = '<div id="content">'+'<a href="produkter.html">Milk bar & lounge</a>'+'</br>'+'<a href="om_oss.html"><img src="stylesheets/milk.png" alt="Milk bar & lounge"></a>'+'</div>';
+  var contentStringMolla = '<div id="content">'+'<a href="produkter.html">Mølla</a>'+'</br>'+'<a href="om_oss.html"><img src="stylesheets/molla.png" alt="Mølla"></a>'+'</div>';
+  var contentStringPiano = '<div id="content">'+'<a href="produkter.html">Piano</a>'+'</br>'+'<a href="om_oss.html"><img src="stylesheets/piano.png" alt="Piano"></a>'+'</div>';
+  var contentStringPianisten = '<div id="content">'+'<a href="produkter.html">Pianisten</a>'+'</br>'+'<a href="om_oss.html"><img src="stylesheets/pianisten.png" alt="Pianisten"></a>'+'</div>';
+  var contentStringPosthjornet = '<div id="content">'+'<a href="produkter.html">Posthjørnet Pub</a>'+'</br>'+'<a href="om_oss.html"><img src="stylesheets/posthjornet.png" alt="Posthjørnet Pub"></a>'+'</div>';
+  var contentStringSmutthullet = '<div id="content">'+'<a href="produkter.html">Smutthullet Pub</a>'+'</br>'+'<a href="om_oss.html"><img src="stylesheets/smutthullet.png" alt="Smutthullet Pub"></a>'+'</div>';
+  var contentStringSteinovnen = '<div id="content">'+'<a href="produkter.html">Steinovnen</a>'+'</br>'+'<a href="om_oss.html"><img src="stylesheets/steinovnen.png" alt="Steinovnen"></a>'+'</div>';
+  var contentStringTeaterfabrikken = '<div id="content">'+'<a href="produkter.html">Teaterfabrikken</a>'+'</br>'+'<a href="om_oss.html"><img src="stylesheets/teaterfabrikken.png" alt="Teaterfabrikken"></a>'+'</div>';
+  var contentStringToldboden = '<div id="content">'+'<a href="produkter.html">Toldboden</a>'+'</br>'+'<a href="om_oss.html"><img src="stylesheets/toldboden.png" alt="Toldboden"></a>'+'</div>';
+  var contentStringBacchus = '<div id="content">'+'<a href="produkter.html">Bacchus</a>'+'</br>'+'<a href="om_oss.html"><img src="stylesheets/bacchus.png" alt="Bacchus"></a>'+'</div>';
+  
+  
+  //Banken
+  
+  var infowindowBanken = new google.maps.InfoWindow({
+    content: contentStringBanken
+  });
+  
+  markerBanken = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.47268, lng: 6.23061}
+  });
+  
+  markerBanken.addListener('click', function(){
+    infowindowBanken.open(map, markerBanken);
+  });
+  
+  //Anno
+  
+  var infowindowAnno = new google.maps.InfoWindow({
+    content: contentStringAnno
+  });
+  
+  markerAnno = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.47136, lng: 6.15128}
+  });
+  
+  markerAnno.addListener('click', function(){
+    infowindowAnno.open(map, markerAnno);
+  });
+  
+  //Bocca
+  
+var infowindowBocca = new google.maps.InfoWindow({
+    content: contentStringBocca
+  });
+  
+  markerBocca = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.47123, lng: 6.15288}
+  });
+  
+  markerBocca.addListener('click', function(){
+    infowindowBocca.open(map, markerBocca);
+  });
+ 
+ 
+ 
+     
+  
+  
+     //Dirty Nelly
+  
+var infowindowDirtyNelly = new google.maps.InfoWindow({
+    content: contentStringDirtyNelly
+  });
+  
+  markerDirtyNelly = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.471323, lng: 6.150896}
+  });
+  
+  markerDirtyNelly.addListener('click', function(){
+    infowindowDirtyNelly.open(map, markerDirtyNelly);
+  });
+  
+  
+  
+     //Hoffmann
+  
+var infowindowHoffmann = new google.maps.InfoWindow({
+    content: contentStringHoffmann
+  });
+  
+  markerHoffmann = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.473601, lng: 6.156492}
+  });
+  
+  markerHoffmann.addListener('click', function(){
+    infowindowHoffmann.open(map, markerHoffmann);
+  });  
+
+
+
+     //Jugend Bar
+  
+var infowindowJugend = new google.maps.InfoWindow({
+    content: contentStringJugend
+  });
+  
+  markerJugend = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.472332, lng: 6.151923}
+  });
+  
+  markerJugend.addListener('click', function(){
+    infowindowJugend.open(map, markerJugend);
+  }); 
+
+  
+  
+     //Kabb
+  
+var infowindowKabb = new google.maps.InfoWindow({
+    content: contentStringKabb
+  });
+  
+  markerKabb = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.474377, lng: 6.156459}
+  });
+  
+  markerKabb.addListener('click', function(){
+    infowindowKabb.open(map, markerKabb);
+  });
+  
+  
+
+     //Keisern
+  
+var infowindowKeisern = new google.maps.InfoWindow({
+    content: contentStringKeisern
+  });
+  
+  markerKeisern = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.471330, lng: 6.158562}
+  });
+  
+  markerKeisern.addListener('click', function(){
+    infowindowKeisern.open(map, markerKeisern);
+  });
+  
+  
+  
+  
+     //Milk
+  
+var infowindowMilk = new google.maps.InfoWindow({
+    content: contentStringMilk
+  });
+  
+  markerMilk = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.474181, lng: 6.155560}
+  });
+  
+  markerMilk.addListener('click', function(){
+    infowindowMilk.open(map, markerMilk);
+  });
+  
+  
+  
+     //Molla
+  
+var infowindowMolla = new google.maps.InfoWindow({
+    content: contentStringMolla
+  });
+  
+  markerMolla = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.471220, lng: 6.151007}
+  });
+  
+  markerMolla.addListener('click', function(){
+    infowindowMolla.open(map, markerMolla);
+  });
+  
+  
+  
+     //Piano
+  
+var infowindowPiano = new google.maps.InfoWindow({
+    content: contentStringPiano
+  });
+  
+  markerPiano = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.471726, lng: 6.158884}
+  });
+  
+  markerPiano.addListener('click', function(){
+    infowindowPiano.open(map, markerPiano);
+  });
+
+  
+  
+     //Pianisten
+  
+var infowindowPianisten = new google.maps.InfoWindow({
+    content: contentStringPianisten
+  });
+  
+  markerPianisten = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.471352, lng: 6.158766}
+  });
+  
+  markerPianisten.addListener('click', function(){
+    infowindowPianisten.open(map, markerPianisten);
+  });
+ 
+ 
+ 
+ 
+     //Posthjørnet
+  
+var infowindowPosthjornet = new google.maps.InfoWindow({
+    content: contentStringPosthjornet
+  });
+  
+  markerPosthjornet = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.471378, lng: 6.155935}
+  });
+  
+  markerPosthjornet.addListener('click', function(){
+    infowindowPosthjornet.open(map, markerPosthjornet);
+  });
+ 
+ 
+ 
+ 
+     //Smutthullet
+  
+var infowindowSmutthullet = new google.maps.InfoWindow({
+    content: contentStringSmutthullet
+  });
+  
+  markerSmutthullet = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.474231, lng: 6.158089}
+  });
+  
+  markerSmutthullet.addListener('click', function(){
+    infowindowSmutthullet.open(map, markerSmutthullet);
+  });
+  
+  
+  
+     //Steinovnen
+  
+var infowindowSteinovnen = new google.maps.InfoWindow({
+    content: contentStringSteinovnen
+  });
+  
+  markerSteinovnen = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.471941, lng: 6.165821}
+  });
+  
+  markerSteinovnen.addListener('click', function(){
+    infowindowSteinovnen.open(map, markerSteinovnen);
+  });
+  
+  
+  
+     //Teaterfabrikken
+  
+var infowindowTeaterfabrikken = new google.maps.InfoWindow({
+    content: contentStringTeaterfabrikken
+  });
+  
+  markerTeaterfabrikken = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.473294, lng: 6.145757}
+  });
+  
+  markerTeaterfabrikken.addListener('click', function(){
+    infowindowTeaterfabrikken.open(map, markerTeaterfabrikken);
+  });
+  
+  
+  
+     //Toldboden
+  
+var infowindowToldboden = new google.maps.InfoWindow({
+    content: contentStringToldboden
+  });
+  
+  markerToldboden = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.474976, lng: 6.154201}
+  });
+  
+  markerToldboden.addListener('click', function(){
+    infowindowToldboden.open(map, markerToldboden);
+  }); 
+  
+  
+  
+       //Bacchus
+  
+var infowindowBacchus = new google.maps.InfoWindow({
+    content: contentStringBacchus
+  });
+  
+  markerBacchus = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.471342, lng: 6.156924}
+  });
+  
+  markerBacchus.addListener('click', function(){
+    infowindowBacchus.open(map, markerBacchus);
+  }); 
+
+ 
+  
+  
+  //Slutt
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+    
   </head>
 
  
@@ -253,15 +659,15 @@ Toldboden
 
 
 
-
-
-
-
-
-
     </section>
     </div>
 
+      
+    <div class="mapWrap">
+      <div id="googleMap"></div>
+    </div>
+      
+      
 <footer>
 Design and maintenance: 
 </footer>
