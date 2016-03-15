@@ -342,26 +342,39 @@ font-size: 30px;
     width:100%;
 }
 
-colgroup col {
+#beertable colgroup col {
   width: 33.3%;
 }
 
-
-th{
+#beertable th{
 border-bottom: 0.1em solid #C0C0C0;
 text-align: center;
-
 padding: 1%;
 font-size: 18px;
 max-width: 33.3%;
 }
 
-
-
-td{
+#beertable td{
   padding: 1%;
   text-align: center;
 }
+
+#beertable table {
+border-bottom: 0.1em solid #C0C0C0;
+}
+
+#priceinfo colgroup col{
+width: 33.3%;   
+}
+#priceinfo th{
+    padding: 1%;
+  text-align: center;
+}
+#priceinfo td{
+    padding: 1%;
+  text-align: center;
+}
+
 
 
 footer
