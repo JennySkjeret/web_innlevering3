@@ -5,6 +5,50 @@
     <meta charset="utf-8">
     <title>groupptwo</title>
      <link rel="stylesheet" href="uiaastylesheet.css">
+     
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width" content="initial-scale=1"/>
+    
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+
+<script>
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(62.472332,6.151923),
+    zoom:15,
+    
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap2"),mapProp);
+  
+  var markerJugend;
+  var contentStringJugend = '<div id="content">'+'<a href="jugend.html">Jugend Bar</a>'+'</div>';
+  
+       //Jugend Bar
+  
+var infowindowJugend = new google.maps.InfoWindow({
+    content: contentStringJugend
+  });
+  
+  markerJugend = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 62.472332, lng: 6.151923}
+  });
+  
+  markerJugend.addListener('click', function(){
+    infowindowJugend.open(map, markerJugend);
+  }); 
+  
+  
+    }
+google.maps.event.addDomListener(window, 'load', initialize);
+  
+  
+  </script>
+     
+     
   </head>
 
  
@@ -88,6 +132,11 @@ Jugend bar er tilbyr god mat, hyggelig betjening, live musikk minst 3 dager i uk
 </p>
 </article>
 </div>
+
+    <div class="mapWrap">
+      <div id="googleMap2"></div>
+    </div>
+
     </section>
 
 
