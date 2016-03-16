@@ -90,6 +90,10 @@ body{
 }
 
 
+.dropDownMenuWrap {
+    display: none;
+}
+
 .headerWrap {
   width: 100%;
   background-color: black;
@@ -101,6 +105,7 @@ nav {
   float: right;
   margin-top: 2.5%;
   margin-right: 3%;
+  margin-bottom: 1%;
   width: 77%;
 }
 
@@ -112,6 +117,10 @@ nav ul {
 nav ul li {
   width: 33.3333%;
   float: right;
+}
+
+nav ul li a:hover {
+    font-size: 170%;
 }
 
 nav ul li a {
@@ -132,11 +141,16 @@ margin-top: 0.5%;
 margin-left: 10%;
 }
 
+.headerWrap img:hover {
+    
+}
+
 
 #home section{
 color: #000000;
 height: 300%;
 width: 100%;
+margin-top: 0.5%;
 }
 
 #logo {
@@ -385,3 +399,84 @@ width: 100%;
   clear:both;
 
 }
+
+
+
+@media only screen and (max-width: 600px) {
+
+nav {
+    display: none;
+}
+
+.dropDownMenuWrap {
+    display: block;
+    max-width: 600px;
+    width: 100%;
+    margin-top: 0.5%;
+    text-align: center;
+    color: white;
+}
+
+.dropDownMenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.dropDownMenu ul li img {
+    width: 7%;
+}
+
+
+.dropDownMenu ul li:hover {
+ 
+}
+
+.dropDownMenu ul li a,visited {
+    display: block;
+    padding: 2%;
+    color: #616161;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 160%;
+}
+
+.dropDownMenu ul li a:hover {
+    text-decoration: none;
+    color: #262626;
+    font-size: 200%;
+}
+
+.dropDownMenu ul li:hover ul {
+    display: block;
+}
+
+.dropDownMenu ul ul {
+    display: none;
+    background-color: white;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -0%);
+}
+
+
+.dropDownMenu ul ul li p {
+    border-bottom: 0.03em solid #CCCCCC;
+}
+
+
+.headerWrap {
+  width: 100%;
+  background-color: black;
+  top: 0;
+}
+
+.headerWrap img {
+width: 12%;
+margin-left: 44%;
+}
+
