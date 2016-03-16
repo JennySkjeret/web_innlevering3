@@ -388,16 +388,17 @@ width: 33.3%;
 
 
 
-footer
-{
+footer {
 background-color: #000000;
 color: #FFFFFF;
 text-align: center;
-padding: 15px 15px;
-margin-top: 10px;
+margin-top: 0.5%;
 width: 100%;
-  clear:both;
+clear:both;
+}
 
+footer p {
+  padding: 2%;
 }
 
 
