@@ -281,7 +281,6 @@ text-decoration: underline;
 text-align: justify;
 line-height: 1.5;
 padding-right:5%;
-border-right: 0.1em solid #C0C0C0;
 }
 
 .title {
@@ -384,6 +383,15 @@ width: 33.3%;
 #priceinfo td{
     padding: 1%;
   text-align: center;
+}
+
+
+.listInfo {
+    margin-bottom: 2%;
+}
+
+.listInfo ul li {
+    margin: 0 0 -2% 0;
 }
 
 
