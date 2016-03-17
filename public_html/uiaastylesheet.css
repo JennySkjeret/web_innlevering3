@@ -388,6 +388,7 @@ width: 33.3%;
 
 
 
+
 footer {
 background-color: #000000;
 color: #FFFFFF;
@@ -398,10 +399,18 @@ clear:both;
 }
 
 footer p {
-  padding: 2%;
+ padding: 0.5%;
 }
 
+footer a{
+    color:white;
+}
 
+footer li{
+    margin:0 0 0.5% 0;
+}
+
+/*  style for smaller screens  */
 
 @media only screen and (max-width: 600px) {
 
@@ -430,8 +439,8 @@ nav {
 }
 
 
-.dropDownMenu ul li:hover {
- 
+.dropDownMenu ul li a {
+    font-family: monospace;
 }
 
 .dropDownMenu ul li a,visited {
@@ -479,5 +488,40 @@ nav {
 .headerWrap img {
 width: 12%;
 margin-left: 44%;
+}
+
+
+.biggerleft figure figcaption {
+color: #FFFFFF;
+margin-left: 1%;
+font-size: 80%;
+position: absolute;
+margin-top: -6%;
+}
+
+.biggerright figure figcaption {
+  color: #FFFFFF;
+margin-left: 1%;
+font-size: 80%;
+position: absolute;
+margin-top: -6%;
+}
+
+.smallerleft figure figcaption {
+color: #FFFFFF;
+margin-left: 1%;
+font-size: 80%;
+position: absolute;
+margin-top: -5%;
+}
+
+.leftSmall {}
+
+.smallerright figure figcaption {
+color: #FFFFFF;
+margin-left: 1%;
+font-size: 80%;
+position: absolute;
+margin-top: -5%;
 }
 
