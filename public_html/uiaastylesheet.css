@@ -398,9 +398,16 @@ clear:both;
 }
 
 footer p {
-  padding: 2%;
+ padding: 0.5%;
 }
 
+footer a{
+    color:white;
+}
+
+footer li{
+    margin:0 0 0.5% 0;
+}
 
 
 @media only screen and (max-width: 600px) {
