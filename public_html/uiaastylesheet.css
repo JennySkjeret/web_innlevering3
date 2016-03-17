@@ -396,6 +396,7 @@ width: 33.3%;
 
 
 
+
 footer {
 background-color: #000000;
 color: #FFFFFF;
@@ -417,6 +418,7 @@ footer li{
     margin:0 0 0.5% 0;
 }
 
+/*  style for smaller screens  */
 
 @media only screen and (max-width: 600px) {
 
@@ -445,8 +447,8 @@ nav {
 }
 
 
-.dropDownMenu ul li:hover {
- 
+.dropDownMenu ul li a {
+    font-family: monospace;
 }
 
 .dropDownMenu ul li a,visited {
@@ -530,3 +532,4 @@ font-size: 80%;
 position: absolute;
 margin-top: -5%;
 }
+
